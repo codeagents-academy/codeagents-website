@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus | CodeAgents Mastery Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Library for direct PDF download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1a1a1a; }
+        .accent-border { border-left: 4px solid #00FF88; padding-left: 1rem; }
+        
+        /* Hide these elements when generating the PDF */
+        .no-print { display: block; }
+        
+        /* Specific PDF styling tweaks */
+        #syllabus-content {
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4 md:p-8">
+
+    <!-- Action Bar (Hidden during generation) -->
+    <div class="no-print max-w-4xl mx-auto mb-8 flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+        <div>
+            <p class="text-sm font-bold text-gray-900">CodeAgents Academy</p>
+            <p class="text-xs text-gray-500">Official Course Syllabus v1.2</p>
+        </div>
+        <button id="download-btn" onclick="downloadSyllabus()" class="bg-black text-white px-6 py-2.5 rounded-lg font-bold hover:bg-[#00FF88] hover:text-black transition-all flex items-center gap-2">
+            <svg id="download-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <span id="btn-text">Download PDF</span>
+        </button>
+    </div>
+
+    <!-- The Actual Document Container -->
+    <div id="syllabus-content" class="max-w-4xl mx-auto bg-white p-8 md:p-12 shadow-lg rounded-sm border border-gray-100">
+        
+        <!-- Header -->
+        <header class="border-b-2 border-black pb-8 mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+            <div>
+                <h1 class="text-4xl font-800 tracking-tighter uppercase mb-2">CodeAgents Mastery</h1>
+                <p class="text-xl text-gray-600 font-medium font-bold">Agentic AI Engineer Roadmap</p>
+            </div>
+            <div class="text-left md:text-right">
+                <p class="font-bold text-sm bg-black text-white px-2 py-1 inline-block rounded mb-1 uppercase tracking-widest">Batch: 2026-Q2</p>
+                <p class="text-xs text-gray-400 block">www.codeagents.in</p>
+            </div>
+        </header>
+
+        <!-- Intro -->
+        <section class="mb-10">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-green-600 mb-4 flex items-center gap-2">
+                <span class="w-4 h-0.5 bg-green-600"></span> Program Vision
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-700">Master the complete spectrum of AI—from core literacy to building and deploying autonomous, multi-agent systems. This curriculum is designed for engineers moving from simple prompt engineering to complex <strong>Agentic Architectures</strong>.</p>
+        </section>
+
+        <!-- Curriculum Grid -->
+        <div class="space-y-8">
+            <!-- Phase 1 -->
+            <div class="accent-border">
+                <h3 class="font-bold text-lg uppercase tracking-tight mb-1">Phase 01: AI Literacy & Setup</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">AI Decoded (AI vs ML vs DL vs GenAI), Supervised/Unsupervised Learning models, Deep Learning (ANN, DNN, CNN), Professional Environment setup (Gemini, OpenAI, Virtual Envs), and Billing reality checks.</p>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="accent-border">
+                <h3 class="font-bold text-lg uppercase tracking-tight mb-1">Phase 02: GenAI & Prompt Engineering</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Foundation Models internals, LLM Mechanics (Tokens, Parameters, Temperature), Zero-shot/One-shot/Few-shot methodologies, Prompting Principles, and Introduction to RAG & Guardrails.</p>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="accent-border">
+                <h3 class="font-bold text-lg uppercase tracking-tight mb-1">Phase 03: Professional Orchestration</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">LangChain Essentials (LCEL, Chunking, Embeddings), LangServe deployment, LangGraph Fundamentals (Nodes, Edges, State, Checkpointers), Subgraphs, and Human-in-the-Loop (HITL) patterns.</p>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="accent-border">
+                <h3 class="font-bold text-lg uppercase tracking-tight mb-1">Phase 04: Multi-Agent Frameworks</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">CrewAI (Agents, Tasks, Tools), Microsoft AutoGen (Conversation Patterns, Code Safety), Agno/Phidata (Data Insights), and Agentic RAG (Adaptive RAG, LlamaIndex).</p>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="accent-border">
+                <h3 class="font-bold text-lg uppercase tracking-tight mb-1">Phase 05: Agentic Ops & Observability</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">LangSmith for Traceability, AgentOps, Langfuse monitoring, Platform Comparison, and Enterprise-grade Security Guardrails/Safety protocols.</p>
+            </div>
+
+            <!-- Phase 6 -->
+            <div class="accent-border">
+                <h3 class="font-bold text-lg uppercase tracking-tight mb-1">Phase 06: No-Code & Market Mastery</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">N8N Visual Architecture, Lovable.ai, Julius AI, Wispr Flow, NotebookLM research workflows, Custom GPTs, and Market Tool Strategy.</p>
+            </div>
+
+            <!-- Phase 7 -->
+            <div class="accent-border">
+                <h3 class="font-bold text-lg uppercase tracking-tight mb-1 text-green-600">Phase 07: Private AI & Data Sovereignty</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">Ollama (Local LLM Execution), HuggingFace Hub Mastery, and <strong>PII Masking</strong> (Building Secure Agents for Redacting Sensitive Personal Data).</p>
+            </div>
+        </div>
+
+        <!-- Footer Info -->
+        <footer class="mt-16 pt-8 border-t border-gray-100 flex justify-between items-center italic text-[10px] text-gray-400 uppercase tracking-widest">
+            <p>© 2026 CodeAgents Academy • Suresh</p>
+            <p>Ready to build the future? visit codeagents.in</p>
+        </footer>
+    </div>
+
+    <script>
+        async function downloadSyllabus() {
+            const element = document.getElementById('syllabus-content');
+            const btn = document.getElementById('download-btn');
+            const btnText = document.getElementById('btn-text');
+            
+            // UI Feedback
+            btn.disabled = true;
+            btnText.innerText = "Generating PDF...";
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            const options = {
+                margin: 0.5,
+                filename: 'CodeAgents_Mastery_Syllabus_2026.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            try {
+                // Generate and save the PDF
+                await html2pdf().set(options).from(element).save();
+                
+                // Reset UI
+                btnText.innerText = "Download Success!";
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btnText.innerText = "Download PDF";
+                    btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }, 2000);
+            } catch (error) {
+                console.error("PDF Error:", error);
+                btnText.innerText = "Download Failed";
+                btn.disabled = false;
+            }
+        }
+    </script>
+
+</body>
+</html>

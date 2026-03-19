@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | CodeAgents Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-darker: #050505;
+            --bg-card: #0D0D0D;
+            --accent-bright: #00FF88;
+            --accent-blue: #00D4FF;
+            --border-color: #1A1A1A;
+            --input-bg: #000000;
+        }
+        body { 
+            font-family: 'DM Sans', sans-serif; 
+            background: var(--bg-darker); 
+            color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-darker); }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+
+        .form-card { 
+            background: var(--bg-card); 
+            border: 1px solid var(--border-color); 
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        label { 
+            display: block; 
+            font-size: 0.65rem; 
+            font-weight: 700; 
+            color: #666; 
+            text-transform: uppercase; 
+            margin-bottom: 0.6rem; 
+            letter-spacing: 0.15em; 
+            transition: color 0.3s;
+        }
+
+        input, select { 
+            background: var(--input-bg) !important; 
+            border: 1px solid var(--border-color) !important; 
+            color: white !important; 
+            width: 100%; 
+            padding: 0.9rem 1rem; 
+            border-radius: 12px; 
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            appearance: none;
+        }
+
+        input:focus, select:focus { 
+            border-color: var(--accent-bright) !important; 
+            box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.05);
+            outline: none;
+        }
+
+        .input-group:focus-within label {
+            color: var(--accent-bright);
+        }
+
+        .btn-publish { 
+            background: var(--accent-bright); 
+            color: black; 
+            font-weight: 900; 
+            padding: 1.1rem; 
+            border-radius: 14px; 
+            width: 100%; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em;
+            border: none; 
+            cursor: pointer; 
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn-publish:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+            background: #00E67A;
+        }
+
+        .btn-publish:active { transform: translateY(0); }
+
+        /* Select Arrow Customization */
+        .select-wrapper { position: relative; }
+        .select-wrapper::after {
+            content: '↓';
+            font-size: 0.8rem;
+            color: #444;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .nav-button {
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid var(--border-color);
+            color: #888;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background: rgba(255,255,255,0.03);
+            border-color: #444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="max-w-xl mx-auto py-12 px-6">
+        <!-- Header -->
+        <header class="flex flex-col items-center mb-12">
+            <div class="w-12 h-12 bg-[#00FF88] rounded-xl flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(0,255,136,0.3)]">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h1 class="text-2xl mb-2 tracking-tight">Publisher Console</h1>
+            <p class="text-gray-500 text-sm font-medium">Manage Batch 2026-Q1 Sessions</p>
+        </header>
+
+        <!-- Form Card -->
+        <div class="form-card p-8 md:p-10">
+            <form id="publishForm" class="space-y-6">
+                
+                <!-- Timing Row -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="input-group">
+                        <label>Target Week</label>
+                        <div class="select-wrapper">
+                            <select id="week">
+                                <option value="1">Week 01</option>
+                                <option value="2">Week 02</option>
+                                <option value="3">Week 03</option>
+                                <option value="4">Week 04</option>
+                                <option value="5">Week 05</option>
+                                <option value="6">Week 06</option>
+                                <option value="7">Week 07</option>
+                                <option value="8">Week 08</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Session Day</label>
+                        <div class="select-wrapper">
+                            <select id="day">
+                                <option value="1">Saturday</option>
+                                <option value="2">Sunday</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <div class="input-group">
+                    <label>Content Title</label>
+                    <input type="text" id="title" placeholder="e.g. LangGraph State & Memory Management">
+                </div>
+
+                <!-- Video Link -->
+                <div class="input-group">
+                    <label>Google Drive Video URL</label>
+                    <div class="relative">
+                        <input type="url" id="videoUrl" placeholder="https://drive.google.com/file/..." class="pl-10">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Resource Link -->
+                <div class="input-group">
+                    <label>Resources / Slides URL</label>
+                    <div class="relative">
+                        <input type="url" id="resourceUrl" placeholder="https://drive.google.com/folder/..." class="pl-10">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-publish">
+                    Update Dashboard
+                </button>
+            </form>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="mt-12 flex justify-center gap-4">
+            <a href="dashboard.html" class="nav-button">Dashboard</a>
+            <a href="index.html" class="nav-button">Public Website</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Replace these with your ACTUAL keys from Supabase Settings > API
+        const SUPABASE_URL = 'https://jqxxxnuhkmqtypggxvoz.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_luKyxIHrGwcWLepcJQ6M4Q_aTLl7xHs';
+        const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    </script>
+
+    <script>
+        document.getElementById('publishForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('button');
+            btn.innerText = "PUBLISHING...";
+            btn.disabled = true;
+
+            const sessionData = {
+                week_number: parseInt(document.getElementById('week').value),
+                day_number: parseInt(document.getElementById('day').value),
+                title: document.getElementById('title').value,
+                video_url: document.getElementById('videoUrl').value,
+                resource_url: document.getElementById('resourceUrl').value
+            };
+
+            // THE INSERT CALL
+            const { data, error } = await sb
+                .from('sessions')
+                .insert([sessionData]);
+
+            if (error) {
+                console.error("Supabase Error:", error);
+                alert("Error: " + error.message);
+            } else {
+                alert("Success! Data saved to Supabase.");
+                e.target.reset();
+            }
+            
+            btn.innerText = "UPDATE DASHBOARD";
+            btn.disabled = false;
+        });
+
+        async function handleAdminSubmit(e) {
+            e.preventDefault();
+            
+            const week = document.getElementById('week').value;
+            const day = document.getElementById('day').value;
+            const title = document.getElementById('title').value;
+            const videoUrl = document.getElementById('videoUrl').value;
+            const resourceUrl = document.getElementById('resourceUrl').value;
+
+            const { data, error } = await sb
+                .from('sessions')
+                .insert([
+                    { 
+                        week_number: parseInt(week), 
+                        day_number: parseInt(day), 
+                        title: title, 
+                        video_url: videoUrl, 
+                        resource_url: resourceUrl 
+                    }
+                ]);
+
+            if (error) {
+                alert("Error publishing: " + error.message);
+            } else {
+                alert(`Success! Week ${week} - Day ${day} has been updated.`);
+                document.getElementById('publishForm').reset();
+            }
+        }
+    </script>
+</body>
+</html>

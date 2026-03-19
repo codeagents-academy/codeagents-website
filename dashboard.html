@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | CodeAgents Mastery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0D0D0D;
+            --bg-darker: #050505;
+            --bg-card: #1A1A1A;
+            --accent-bright: #00FF88;
+            --accent-blue: #00D4FF;
+            --text-bright: #FFFFFF;
+            --text-muted: #A8A8A8;
+            --border-color: #2A2A2A;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-darker);
+            color: var(--text-bright);
+        }
+        h1, h2, h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            height: 100vh;
+            width: 300px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: var(--bg-dark);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 50;
+        }
+        .main-content {
+            margin-left: 300px;
+            padding: 3rem;
+        }
+
+        /* Nav Links */
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            border: 1px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active {
+            background: rgba(0, 255, 136, 0.08);
+            color: var(--accent-bright);
+            border-color: rgba(0, 255, 136, 0.2);
+        }
+        .nav-item svg { width: 18px; height: 18px; opacity: 0.7; }
+        .nav-item:hover svg, .nav-item.active svg { opacity: 1; stroke: var(--accent-bright); }
+
+        .week-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.85rem 1rem;
+            margin-bottom: 0.4rem;
+            border-radius: 10px;
+            color: #666;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .week-link:hover, .week-link.active {
+            color: white;
+            background: rgba(255,255,255,0.03);
+        }
+        .dot { width: 5px; height: 5px; border-radius: 50%; background: #333; }
+        .week-link.active .dot { background: var(--accent-bright); box-shadow: 0 0 10px var(--accent-bright); }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 2rem; }
+
+        @media (max-width: 1024px) {
+            .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border-color); }
+            .main-content { margin-left: 0; padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="mb-10 flex items-center gap-3">
+            <div class="w-8 h-8 bg-[#00FF88] rounded-lg flex items-center justify-center font-bold text-black shadow-[0_0_15px_rgba(0,255,136,0.3)]">CA</div>
+            <h2 style="color: var(--text-bright); font-size: 1rem; letter-spacing: 0.05em;">CodeAgents</h2>
+        </div>
+        
+        <nav>
+            <p class="text-[10px] text-gray-600 font-bold uppercase tracking-[2px] mb-4 ml-2">General</p>
+            <a href="index.html" class="nav-item">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span>Main Website</span>
+            </a>
+            <a href="dashboard.html" class="nav-item active">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <span>Dashboard</span>
+            </a>
+
+            <hr class="border-gray-800 my-6 mx-2">
+
+            <p class="text-[10px] text-gray-600 font-bold uppercase tracking-[2px] mb-4 ml-2">8-Week Roadmap</p>
+            <div class="space-y-1">
+                <a href="#" class="week-link active"><span>Week 01</span> <div class="dot"></div></a>
+                <a href="#" class="week-link"><span>Week 02</span> <div class="dot"></div></a>
+                <a href="#" class="week-link"><span>Week 03</span> <div class="dot"></div></a>
+                <a href="#" class="week-link"><span>Week 04</span> <div class="dot"></div></a>
+                <a href="#" class="week-link"><span>Week 05</span> <div class="dot"></div></a>
+                <a href="#" class="week-link"><span>Week 06</span> <div class="dot"></div></a>
+                <a href="#" class="week-link"><span>Week 07</span> <div class="dot"></div></a>
+                <a href="#" class="week-link"><span>Week 08</span> <div class="dot"></div></a>
+            </div>
+        </nav>
+
+        <div class="absolute bottom-8 left-6 right-6">
+            <a href="login.html" class="flex items-center gap-3 text-xs text-gray-500 hover:text-red-400 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                Logout Session
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="flex justify-between items-center mb-12">
+            <div>
+                <h1 class="text-2xl tracking-tight">Week 01 Dashboard</h1>
+                <p class="text-sm text-gray-500 mt-1">Foundations & Agentic Architecture</p>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="hidden md:flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-[#00FF88] transition-all px-4 py-2 border border-gray-800 rounded-xl hover:border-[#00FF88]/30">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    EXIT TO MAIN SITE
+                </a>
+                
+                <div class="flex items-center gap-3 pl-6 border-l border-gray-800">
+                    <div class="text-right">
+                        <p class="text-xs font-bold">Suresh</p>
+                        <p class="text-[10px] text-green-500 uppercase tracking-wider">Verified Student</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#00FF88] to-[#00D4FF] p-[2px]">
+                        <div class="w-full h-full rounded-full bg-black flex items-center justify-center text-xs font-bold">S</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="card relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <svg width="120" height="120" fill="none" stroke="#00FF88" stroke-width="1" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            
+            <h3 class="text-lg mb-6 flex items-center gap-3">
+                <span class="w-1.5 h-6 bg-[#00FF88] rounded-full"></span>
+                Module 01: Agentic Foundations
+            </h3>
+
+            <div class="bg-black/40 border border-gray-800 p-6 rounded-2xl mb-4 hover:border-[#00FF88]/40 transition-all group">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span id="day1-label" class="text-[10px] font-black text-[#00D4FF] uppercase tracking-widest">Day 1 • Saturday</span>
+                        <h4 id="day1-title" class="text-lg font-bold mt-1 group-hover:text-white transition-colors">Content coming soon!</h4>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="#" id="day1-video" class="hidden px-5 py-2.5 bg-[#00FF88] text-black text-xs font-black rounded-xl hover:scale-105 transition-transform">PLAY VIDEO</a>
+                        <a href="#" id="day1-resource" class="hidden px-5 py-2.5 bg-gray-800 text-white text-xs font-bold rounded-xl hover:bg-gray-700 transition-colors">SLIDES</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-black/40 border border-gray-800 p-6 rounded-2xl hover:border-[#00FF88]/40 transition-all group">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <span id="day2-label" class="text-[10px] font-black text-[#00D4FF] uppercase tracking-widest">Day 2 • Sunday</span>
+                        <h4 id="day2-title" class="text-lg font-bold mt-1 group-hover:text-white transition-colors">Content coming soon!</h4>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="#" id="day2-video" class="hidden px-5 py-2.5 bg-[#00FF88] text-black text-xs font-black rounded-xl hover:scale-105 transition-transform">PLAY VIDEO</a>
+                        <a href="#" id="day2-resource" class="hidden px-5 py-2.5 bg-gray-800 text-white text-xs font-bold rounded-xl hover:bg-gray-700 transition-colors">SLIDES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="video-modal" class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,255,136,0.2)] border border-white/10">
+            <button onclick="closeVideo()" class="absolute top-4 right-4 z-[110] bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-500 transition-all font-bold">✕</button>
+        
+            <iframe 
+                id="video-frame" 
+                src="" 
+                class="w-full h-full" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div id="video-loader" class="absolute inset-0 flex items-center justify-center bg-black z-0">
+            <div class="w-10 h-10 border-4 border-[#00FF88]/20 border-t-[#00FF88] rounded-full animate-spin"></div>
+        </div>
+    </div>
+
+    <button onclick="toggleAIChat()" class="fixed bottom-8 right-8 z-[60] w-14 h-14 bg-[#00FF88] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,255,136,0.4)] hover:scale-110 transition-transform">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    </button>
+
+    <div id="ai-chat-window" class="hidden fixed bottom-24 right-8 z-[60] w-[380px] h-[500px] bg-[#0D0D0D] border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+        <div class="p-4 border-b border-white/10 bg-[#121212] flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-[#00FF88] rounded-full animate-pulse"></div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#00FF88]">Lab Assistant</span>
+            </div>
+            <button onclick="toggleAIChat()" class="text-gray-500 hover:text-white">✕</button>
+        </div>
+
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 text-sm">
+            <div class="bg-white/5 p-3 rounded-lg border border-white/5">
+                <p class="text-gray-300">Hello! I'm your CodeAgents Assistant. Ask me anything about LangGraph, CrewAI, or today's session.</p>
+            </div>
+        </div>
+
+        <div class="p-4 border-t border-white/10 bg-[#121212]">
+            <form onsubmit="handleAIChat(event)" class="flex gap-2">
+                <input type="text" id="ai-input" placeholder="Ask a question..." class="flex-1 bg-black border border-white/10 rounded-xl px-4 py-2 text-xs focus:border-[#00FF88] outline-none">
+                <button type="submit" class="bg-[#00FF88] text-black px-4 py-2 rounded-xl font-bold text-xs uppercase">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Replace these with your ACTUAL keys from Supabase Settings > API
+        const SUPABASE_URL = 'https://jqxxxnuhkmqtypggxvoz.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_luKyxIHrGwcWLepcJQ6M4Q_aTLl7xHs';
+        const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        async function loadWeekData(weekNumber) {
+            const { data, error } = await sb
+                .from('sessions')
+                .select('*')
+                .eq('week_number', weekNumber);
+
+            if (error) {
+                console.error("Error loading sessions:", error);
+                return;
+            }
+
+            // Reset view or show "Coming Soon" if no data exists for that week
+            if (data.length === 0) {
+                alert("Sessions for this week haven't been uploaded yet.");
+                return;
+            }
+
+            // Example logic to update Day 1 UI
+            const day1 = data.find(s => s.day_number === 1);
+            if (day1) {
+                // Update the Day 1 Title and Links in your HTML using IDs
+                // Assuming you add id="day1-title", id="day1-video", etc. to your elements
+                document.getElementById('day1-title').innerText = day1.title;
+                document.getElementById('day1-video').href = day1.video_url;
+                document.getElementById('day1-resource').href = day1.resource_url;
+            }
+        }
+
+        async function checkUser() {
+            const { data: { user } } = await sb.auth.getUser();
+
+            if (!user) {
+                // No user found, kick them back to login
+                window.location.href = 'login.html';
+            } else {
+                console.log("Welcome student:", user.email);
+                // You can now call your loadWeekData(1) function here
+            }
+        }
+
+        async function handleLogout() {
+            const { error } = await sb.auth.signOut();
+            if (!error) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Run the check as soon as the page loads
+        checkUser();
+
+        // 1. Initialize (Make sure you use the 'sb' variable name we set up)
+        async function loadWeekContent(weekNumber) {
+            console.log("Fetching data for Week:", weekNumber); // Debug line
+
+            const mainTitle = document.querySelector('h1');
+            const weekLabel = document.querySelector('header p');
+            
+            // UI Feedback: Show loading state
+            mainTitle.innerText = `Loading Week ${weekNumber}...`;
+
+            // 2. Fetch from Supabase
+            const { data, error } = await sb
+                .from('sessions')
+                .select('*')
+                .eq('week_number', parseInt(weekNumber)) // Force it to be a number
+                .order('day_number', { ascending: true });
+
+            if (error) {
+                console.error("Fetch error:", error);
+                return;
+            }
+
+            console.log("Data received from Supabase:", data); // Check if this is empty []
+
+            // Update Header
+            mainTitle.innerText = `Week 0${weekNumber} Dashboard`;
+            
+            // 3. Clear existing states (Hide buttons initially)
+            const buttons = ['day1-video', 'day1-resource', 'day2-video', 'day2-resource'];
+            buttons.forEach(id => document.getElementById(id).classList.add('hidden'));
+
+            // 4. Inject the Google Drive links
+           data.forEach(session => {
+                // Determine if it's day 1 or day 2
+                const dayPrefix = `day${session.day_number}`;
+                
+                // 1. Update the Title
+                const titleEl = document.getElementById(`${dayPrefix}-title`);
+                if (titleEl) {
+                    titleEl.innerText = session.title;
+                }
+
+                // 2. Setup the Video Button
+                const vBtn = document.getElementById(`${dayPrefix}-video`);
+                if (vBtn && session.video_url) {
+                    vBtn.classList.remove('hidden');
+                    vBtn.onclick = (e) => {
+                        e.preventDefault();
+                        // Optional: Update the Modal Header with the video title
+                        // document.getElementById('modal-video-title').innerText = session.title;
+                        playVideo(session.video_url);
+                    };
+                }
+
+                // 3. Setup the Resources Button
+                const rBtn = document.getElementById(`${dayPrefix}-resource`);
+                if (rBtn && session.resource_url) {
+                    rBtn.classList.remove('hidden');
+                    rBtn.href = session.resource_url;
+                    rBtn.target = "_blank"; // Open resources in new tab
+                }
+            });
+
+            // If no data exists for a day
+            if (data.length === 0) {
+                document.getElementById('day1-title').innerText = "Content coming soon!";
+                document.getElementById('day2-title').innerText = "Content coming soon!";
+            }
+        }
+
+        // 5. Attach Event Listeners to Sidebar
+        document.querySelectorAll('.week-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all, add to this one
+                document.querySelectorAll('.week-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Extract week number from text (e.g., "Week 01" -> 1)
+                const weekNum = parseInt(this.innerText.match(/\d+/)[0]);
+                loadWeekContent(weekNum);
+            });
+        });
+
+        // Function to handle the video player logic
+        function playVideo(rawDriveUrl) {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-frame');
+            const loader = document.getElementById('video-loader');
+
+            // Show loader
+            loader.style.display = 'flex';
+
+            let embedUrl = rawDriveUrl.replace('/view', '/preview').replace('/edit', '/preview');
+            iframe.src = embedUrl;
+
+            // Hide loader when iframe finishes loading
+            iframe.onload = function() {
+                loader.style.display = 'none';
+            };
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideo() {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('video-frame');
+            
+            iframe.src = ""; // Stop the video from playing in the background
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Load Week 1 by default on page load
+        window.onload = () => loadWeekContent(1);
+
+        function toggleAIChat() {
+            const chat = document.getElementById('ai-chat-window');
+            chat.classList.toggle('hidden');
+        }
+
+        async function handleAIChat(e) {
+            e.preventDefault();
+            const input = document.getElementById('ai-input');
+            const container = document.getElementById('chat-messages');
+            const userMessage = input.value.trim();
+
+            if (!userMessage) return;
+
+            // 1. Append User Message
+            appendMessage('user', userMessage);
+            input.value = '';
+
+            // 2. Show "Thinking..." state
+            const thinkingId = 'thinking-' + Date.now();
+            appendMessage('ai', '...', thinkingId);
+
+            try {
+                /* INTEGRATION POINT:
+                Replace this mock with a call to your AI backend.
+                Example: const response = await sb.functions.invoke('chat-assistant', { body: { prompt: userMessage } });
+                */
+                
+                // Mock Response for now
+                setTimeout(() => {
+                    const thinkingEl = document.getElementById(thinkingId);
+                    thinkingEl.innerHTML = `<p class="text-gray-300">I'm currently being connected to the CodeAgents brain. In the live version, I'll explain <b>${userMessage}</b> based on Suresh's curriculum!</p>`;
+                }, 1000);
+
+            } catch (err) {
+                document.getElementById(thinkingId).innerText = "Error connecting to AI.";
+            }
+        }
+
+        function appendMessage(role, text, id = null) {
+            const container = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = role === 'user' ? 'ml-auto bg-[#00FF88]/10 border border-[#00FF88]/20 p-3 rounded-lg max-w-[80%]' : 'bg-white/5 border border-white/10 p-3 rounded-lg max-w-[80%]';
+            if (id) msgDiv.id = id;
+            msgDiv.innerHTML = `<p class="${role === 'user' ? 'text-[#00FF88]' : 'text-gray-300'}">${text}</p>`;
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+    </script>
+    
+</body>
+</html>

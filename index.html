@@ -1447,6 +1447,9 @@
                     <a href="#testimonials" class="nav-link">Reviews</a>
                     <a href="#contact" class="nav-link">Contact</a>
                     <button class="btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.75rem;">Enroll Now</button>
+                    <a href="login.html" class="btn-secondary" style="padding: 0.75rem 1.5rem; font-size: 0.75rem; margin-right: 1rem; border-color: var(--accent-bright); color: var(--accent-bright);">
+                        Student Login
+                    </a>
                 </div>
             </div>
         </div>
@@ -1462,7 +1465,7 @@
             <p class="hero-subtitle">Transform your AI expertise from foundational concepts to enterprise-grade autonomous agent systems. Build production-ready multi-agent architectures with the most advanced frameworks.</p>
             <div class="hero-cta-group">
                 <a href="#curriculum" class="btn-primary">Explore Curriculum</a>
-                <a href="#schedule" class="btn-secondary">View Schedule</a>
+                <a href="syllabus.html" target="_blank" class="btn-secondary">Download Syllabus</a>
             </div>
         </div>
     </section>
@@ -1472,12 +1475,12 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">10</div>
+                    <div class="stat-number">12</div>
                     <div class="stat-label">Comprehensive Modules</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">12+</div>
-                    <div class="stat-label">Frameworks Covered</div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Frameworks & Tools</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">40+</div>
@@ -1799,188 +1802,111 @@
         </div>
     </section>
 
-   <!-- Curriculum Interactive Accordion -->
-    <section id="curriculum" class="section" style="background: var(--bg-dark);">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Curriculum</div>
-                <h2 class="section-title">Complete Learning Path</h2>
-                <p class="section-subtitle">A meticulously crafted syllabus from fundamentals to production-grade agents.</p>
+    <section id="curriculum" class="py-24 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tighter uppercase">The Mastery Roadmap</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">From core fundamentals to building autonomous multi-agent systems. This is the complete path to becoming an Agentic AI Engineer.</p>
             </div>
 
-            <div class="accordion-container" id="curriculumAccordion">
-                <!-- Module 1 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #3B82F6; font-weight: 900; font-size: 1rem;">01</span>
-                            <h3 style="font-size: 1.2rem;">GenAI & Agentic Architecture Foundation</h3>
-                        </div>
-                        <span class="chevron">▼</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="p-8 bg-[#0D0D0D] border border-white/5 rounded-3xl hover:border-[#00FF88]/30 transition-all group">
+                    <div class="w-12 h-12 bg-[#00FF88]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-[#00FF88]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     </div>
-                    <div class="accordion-content" style="--module-color: #3B82F6;">
-                        <div class="module-section">
-                            <h4 class="module-section-title">Core Concepts</h4>
-                            <ul><li>GenAI Basics: LLMs, tokens, prompts</li><li>AI vs ML vs Traditional Software</li><li>Python Environment Setup</li></ul>
-                        </div>
-                        <div class="module-section">
-                            <h4 class="module-section-title">Agentic Systems</h4>
-                            <ul><li>What are AI Agents? Anatomy breakdown</li><li>Agent Types: Autonomous, Human-in-loop</li><li>Reflection & Tool-calling patterns</li></ul>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Phase 01: AI Literacy & Setup</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><b class="text-white">AI Decoded:</b> AI vs ML vs DL vs GenAI</li>
+                        <li><b class="text-white">ML Core:</b> Supervised, Unsupervised & Reinforcement</li>
+                        <li><b class="text-white">Deep Learning:</b> ANN, DNN & CNN Architecture</li>
+                        <li><b class="text-white">Environment:</b> Virtual Envs, Gemini & OpenAI Setup</li>
+                    </ul>
                 </div>
 
-                <!-- Module 2 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #F59E0B; font-weight: 900; font-size: 1rem;">02</span>
-                            <h3 style="font-size: 1.2rem;">Technical Environment & LLM Core</h3>
-                        </div>
-                        <span class="chevron">▼</span>
+                <div class="p-8 bg-[#0D0D0D] border border-white/5 rounded-3xl hover:border-[#00D4FF]/30 transition-all group">
+                    <div class="w-12 h-12 bg-[#00D4FF]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-[#00D4FF]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <div class="accordion-content" style="--module-color: #F59E0B;">
-                        <div class="module-section">
-                            <h4 class="module-section-title">Infrastructure</h4>
-                            <ul><li>Software, Virtual Environments & APIs</li><li>Economics: Billing Reality Check</li></ul>
-                        </div>
-                        <div class="module-section">
-                            <h4 class="module-section-title">LLM Deep Dive</h4>
-                            <ul><li>Embeddings, tokens, guardrails & use cases</li><li>ML Implementation Lifecycle</li></ul>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Phase 02: GenAI & Prompt Engineering</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><b class="text-white">GenAI Internals:</b> Foundational Models & Lifecycle</li>
+                        <li><b class="text-white">LLM Mechanics:</b> Tokens, Parameters & Temperature</li>
+                        <li><b class="text-white">Prompting:</b> Zero-shot, One-shot & Few-shot Methodologies</li>
+                        <li><b class="text-white">Knowledge RAG:</b> Basics of Embeddings & Guardrails</li>
+                    </ul>
                 </div>
 
-                <!-- Module 3 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #10B981; font-weight: 900; font-size: 1rem;">03</span>
-                            <h3 style="font-size: 1.2rem;">Advanced Prompt Engineering</h3>
-                        </div>
-                        <span class="chevron">▼</span>
+                <div class="p-8 bg-[#0D0D0D] border border-white/5 rounded-3xl hover:border-purple-500/30 transition-all group">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4a2 2 0 114 0v1a2 2 0 01-2 2H3a2 2 0 01-2-2V4a2 2 0 114 0v1a2 2 0 002 2h2a2 2 0 002-2V4z"></path></svg>
                     </div>
-                    <div class="accordion-content" style="--module-color: #10B981;">
-                        <div class="module-section">
-                            <h4 class="module-section-title">Methodologies</h4>
-                            <ul><li>Zero-shot, One-shot & Few-shot mastery</li><li>Chain of Thought reasoning patterns</li><li>Anatomy of a Prompt & Core Principles</li></ul>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Phase 03: Professional Orchestration</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><b class="text-white">LangChain:</b> LCEL, Chunking & LangServe</li>
+                        <li><b class="text-white">LangGraph:</b> Nodes, Edges & Cyclic States</li>
+                        <li><b class="text-white">Advanced Flow:</b> Subgraphs & Checkpointers</li>
+                        <li><b class="text-white">HITL:</b> Human-in-the-loop Implementation</li>
+                    </ul>
                 </div>
 
-                <!-- Module 4 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #EC4899; font-weight: 900; font-size: 1rem;">04</span>
-                            <h3 style="font-size: 1.2rem;">RAG & LangChain</h3>
-                        </div>
-                        <span class="chevron">▼</span>
+                <div class="p-8 bg-[#0D0D0D] border border-white/5 rounded-3xl hover:border-orange-500/30 transition-all group">
+                    <div class="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
-                    <div class="accordion-content" style="--module-color: #EC4899;">
-                        <div class="module-section">
-                            <h4 class="module-section-title">Architecture</h4>
-                            <ul><li>Introduction to LangChain ecosystem</li><li>Chunking, Embeddings & RAG Standard</li><li>Deployment via LangServe & LCEL</li></ul>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Phase 04: Multi-Agent Ecosystems</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><b class="text-white">CrewAI:</b> Collaboration, Tasks & Tools</li>
+                        <li><b class="text-white">MS AutoGen:</b> Abstractions & Conversation Patterns</li>
+                        <li><b class="text-white">Agno (Phidata):</b> Toolkits & Data Insights</li>
+                        <li><b class="text-white">Agentic RAG:</b> Adaptive RAG & LlamaIndex</li>
+                    </ul>
                 </div>
 
-                <!-- Module 5 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #8B5CF6; font-weight: 900; font-size: 1rem;">05</span>
-                            <h3 style="font-size: 1.2rem;">Agentic Workflows & LangGraph</h3>
-                        </div>
-                        <span class="chevron">▼</span>
+                <div class="p-8 bg-[#0D0D0D] border border-white/5 rounded-3xl hover:border-pink-500/30 transition-all group">
+                    <div class="w-12 h-12 bg-pink-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
-                    <div class="accordion-content" style="--module-color: #8B5CF6;">
-                        <div class="module-section">
-                            <h4 class="module-section-title">Building Blocks</h4>
-                            <ul><li>State, Nodes, Edges, Checkpointers</li><li>Human-in-the-Loop integration</li><li>Multi-Agent System orchestration</li></ul>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Phase 05: Agentic Ops & Observability</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><b class="text-white">LangSmith:</b> Workflow Management & Debugging</li>
+                        <li><b class="text-white">Monitoring:</b> AgentOps & Langfuse</li>
+                        <li><b class="text-white">Safety:</b> Code Execution & Guardrails</li>
+                        <li><b class="text-white">Deployment:</b> Moving from Local to Cloud</li>
+                    </ul>
                 </div>
 
-                <!-- Module 6 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #06B6D4; font-weight: 900; font-size: 1rem;">06</span>
-                            <h3 style="font-size: 1.2rem;">Advanced Agentic RAG & LlamaIndex</h3>
-                        </div>
-                        <span class="chevron">▼</span>
+                <div class="p-8 bg-[#0D0D0D] border border-white/5 rounded-3xl hover:border-yellow-500/30 transition-all group">
+                    <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                     </div>
-                    <div class="accordion-content" style="--module-color: #06B6D4;">
-                        <div class="module-section">
-                            <ul><li>Single-Agent vs Multi-Agent RAG</li><li>Adaptive RAG & Dynamic retrieval</li><li>Query Complexity Classifiers</li><li>LlamaIndex specialized indexing</li></ul>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Phase 06: No-Code & Market Mastery</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><b class="text-white">Automation:</b> N8N Architecture & Use Cases</li>
+                        <li><b class="text-white">Builder Tools:</b> Lovable.ai, Julius AI & Custom GPTs</li>
+                        <li><b class="text-white">Productivity:</b> Gemini GM, NotebookLM & Wispr Flow</li>
+                        <li><b class="text-white">Real-world:</b> Strategy & Tool Selection</li>
+                    </ul>
                 </div>
 
-                <!-- Module 7 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #EF4444; font-weight: 900; font-size: 1rem;">07</span>
-                            <h3 style="font-size: 1.2rem;">Frameworks: Agno & CrewAI</h3>
-                        </div>
-                        <span class="chevron">▼</span>
+                <div class="p-8 bg-[#0D0D0D] border border-white/5 rounded-3xl hover:border-cyan-400/30 transition-all group">
+                    <div class="w-12 h-12 bg-cyan-400/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                     </div>
-                    <div class="accordion-content" style="--module-color: #EF4444;">
-                        <div class="module-section">
-                            <ul><li>Agno Framework & Toolkits</li><li>CrewAI Roles & Task collaboration</li><li>Role, Backstory & Goal Setting logic</li></ul>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Phase 07: Private AI & Data Sovereignty</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><b class="text-white">Ollama:</b> Running Llama 3, Mistral & DeepSeek locally</li>
+                        <li><b class="text-white">HuggingFace:</b> Model Hub, Datasets & Inference API</li>
+                        <li><b class="text-white">PII Masking:</b> Redacting sensitive data for Enterprise Security</li>
+                        <!-- <li><b class="text-white">Data Privacy:</b> On-premise Agent deployment strategies</li> -->
+                    </ul>
                 </div>
-
-                <!-- Module 8 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #6366F1; font-weight: 900; font-size: 1rem;">08</span>
-                            <h3 style="font-size: 1.2rem;">Enterprise: Microsoft AutoGen</h3>
-                        </div>
-                        <span class="chevron">▼</span>
-                    </div>
-                    <div class="accordion-content" style="--module-color: #6366F1;">
-                        <div class="module-section">
-                            <ul><li>AgentChat abstraction & Custom agents</li><li>Secure code execution sandboxing</li><li>Conversation patterns & Enterprise Ops</li></ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module 9 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #14B8A6; font-weight: 900; font-size: 1rem;">09</span>
-                            <h3 style="font-size: 1.2rem;">Agent Observability & Governance</h3>
-                        </div>
-                        <span class="chevron">▼</span>
-                    </div>
-                    <div class="accordion-content" style="--module-color: #14B8A6;">
-                        <div class="module-section">
-                            <ul><li>Tracking complex autonomous behaviors</li><li>LangSmith, AgentOps & Langfuse setup</li><li>Solving the observability challenge</li></ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module 10 -->
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <div style="display: flex; align-items: center; gap: 1.5rem;">
-                            <span style="color: #4F46E5; font-weight: 900; font-size: 1rem;">10</span>
-                            <h3 style="font-size: 1.2rem;">Model Context Protocol (MCP) & Ecosystem</h3>
-                        </div>
-                        <span class="chevron">▼</span>
-                    </div>
-                    <div class="accordion-content" style="--module-color: #4F46E5;">
-                        <div class="module-section">
-                            <ul><li>Hosts, Clients, and Server Topology</li><li>Standardizing universal tool connectivity</li><li>Build MCP Servers (Python/TypeScript)</li><li>Integration: SQLite, GitHub & Slack APIs</li></ul>
-                        </div>
-                    </div>
-                </div>
+<!-- Link to Syllabus under curriculum -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="syllabus.html" target="_blank" style="color: var(--accent-bright); font-weight: 700; text-decoration: underline; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem;">
+                    Download Full Detailed Syllabus (PDF)
+                </a>
+            </div>
             </div>
         </div>
     </section>
